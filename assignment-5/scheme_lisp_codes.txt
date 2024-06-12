@@ -1,0 +1,92 @@
+// SCHEME LISP CODES ...
+// ASSIGNMENT 5 ...
+// 2021CSB071 PRAYAS MAZUMDER ...
+// PROGRAMMING PARADIGM LAB ...
+// date --> 26/03/2023
+
+
+*********************************************************** QUESTION 1 ****************************************************************
+
+
+// Write a Scheme Lisp Program to compute factorial of a natural number //
+
+
+(define (factorial n)
+  (if (= n 0)
+      1
+      (* n (factorial (- n 1)))))
+
+(display(factorial 4))  // this will generate the number 24 ...
+
+
+********************************************************** QUESTION 2 ********************************************************************
+
+
+// Write a Scheme Lisp Program to compute N-th Fibonacci Number, where N is a natural
+number // 
+
+
+(define (fib n)(cond (
+(= n 1) 1)
+(
+(= n 2) 1)
+(else
+(+ (fib (- n 1))(fib (- n 2))
+)
+)
+)
+)
+
+(display(fib 7))   // this will show 13 ...
+
+
+
+************************************************************** QUESTION 3 **********************************************************
+
+
+// Write a Scheme Lisp Program to compute the HCF of two natural numbers N1 and N2
+(N1 >= N2) //
+
+
+(define (hcf n1 n2)         // hcf function takes two natural numbers n1 and n2 as  input and returns their highest common factor
+  (if (= n2 0)
+      n1
+      (hcf n2 (modulo n1 n2))))
+
+
+
+************************************************************** QUESTION 4 **********************************************************
+
+
+// Write a Scheme Lisp Program to find the largest among N natural numbers //
+
+
+(define (largest-number n)
+  (let loop ((n n) (largest -inf.0))     // 'largest' is initialized to negative infinity -inf.0.
+    (if (= n 0)
+        largest
+        (let ((x (read)))
+          (loop (- n 1) (if (> x largest) x largest))))))
+
+
+(largest-number 5)  // This will prompt the user to enter 5 natural numbers and will return the largest among them.
+
+
+
+************************************************************** QUESTION 5 **********************************************************
+
+
+// Write a Scheme Lisp Program to compute the sum of N natural numbers //
+
+
+(define (sum n)
+  (if (= n 0)
+      0
+      (+ n (sum (- n 1)))))
+
+
+(sum 6)    // This will compute the sum of the first 6 natural numbers, which is 21.
+
+
+***********************************************************************************************************************************
+
